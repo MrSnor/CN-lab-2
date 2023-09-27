@@ -8,7 +8,9 @@ public class FileReadTry {
 
     public static void main(String[] args) {
 
-        File file = new File("A:\\college study\\5th Sem\\Computer Network\\lab\\lab1\\RD.md");
+        File file = new File("rd.md");
+
+        System.out.println(String.format("Data from '%s':-", file));
 
         try (InputStream in = new FileInputStream(file)) {
             int content;
