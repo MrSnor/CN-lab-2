@@ -17,7 +17,7 @@ public class copyPasteThingsfromFile {
 
       FileOutputStream fileToBeWrittenOn = new FileOutputStream(fileToWrite, true);
 
-      System.out.print(String.format("Data from '%s':-", fileToRead));
+      System.out.println(String.format("Data from '%s':-", fileToRead));
       while ((content = in.read()) != -1) {
 
         char convertedToChar = (char) content;
