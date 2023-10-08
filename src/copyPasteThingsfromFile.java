@@ -9,8 +9,8 @@ import java.util.Arrays;
  */
 public class copyPasteThingsfromFile {
   public static void main(String[] args) {
-    File fileToRead = new File("A:\\college study\\5th Sem\\Computer Network\\lab\\lab1\\rd.md");
-    File fileToWrite = new File("A:\\college study\\5th Sem\\Computer Network\\lab\\lab1\\wt.md");
+    File fileToRead = new File("rd.md");
+    File fileToWrite = new File("wt.md");
 
     try (InputStream in = new FileInputStream(fileToRead)) {
       int content;
@@ -19,17 +19,9 @@ public class copyPasteThingsfromFile {
 
       System.out.println(String.format("Data from '%s':-", fileToRead));
       while ((content = in.read()) != -1) {
-
-        char convertedToChar = (char) content;
-
-        String strConverted = Character.toString(convertedToChar);
-
-        byte[] bytesToBeWritten = strConverted.getBytes();
-
+        String strConverted = Character.toString((char) content);
         System.out.print(strConverted);
-
-        fileToBeWrittenOn.write(bytesToBeWritten);
-
+        fileToBeWrittenOn.write(content);
       }
       fileToBeWrittenOn.close();
       System.out.println("file saved.");
