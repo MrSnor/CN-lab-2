@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.io.FileInputStream;
 
 public class FileReadTry {
@@ -18,6 +20,14 @@ public class FileReadTry {
             while ((content = in.read()) != -1) {
                 System.out.print((char) content);
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // alternative way to read the file
+        try {
+            String fileContent = new String(Files.readAllBytes(Paths.get("rd.md")));
+            System.out.println("File content: \n" + fileContent);
         } catch (Exception e) {
             e.printStackTrace();
         }
