@@ -1,0 +1,4 @@
+# .gitignore
+
+# Ignore compiled files
+bin/
